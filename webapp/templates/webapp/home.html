@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Covid-19 Tracker</title>
+    <link rel = "stylesheet" href = "static\css\app.css">
+</head>
+<body>
+   
+    <div class = "app__header">
+        <h1>COVID-19 TRACKER</h1>
+        <hr/>
+        <form class = "app__dropdown">
+            <select name = "nameOfCountry" variant = "outlined" value = "abc">
+                <option value = "worldwide">Worldwide</option>
+                    {% for countries in countries %}
+                        <option type = "submit" value = "onClick">{{countries.country}}</option>
+                    {%endfor%} 
+                   
+            </select>
+        </form>        
+    
+    </div>
+    
+    <div class = "row">
+        <div class = "column">
+            <div class = "card">
+                <h3><strong>Total Cases<strong></h3>
+                    {% if result == True%}
+                    <p>{{countries.cases}}</p>
+                    {% endif %}
+            </div>   
+        </div>
+        <div class = "column">
+            <div class = "card">
+                <h3><strong>Recovered<strong></h3>
+                    <p>{{countries.recovered}}</p>
+            </div>   
+        </div>
+        <div class = "column">
+            <div class = "card">
+                <h3><strong>Deaths<strong></h3>
+                    <p>{{countries.deaths}}</p>
+            </div>   
+        </div>    
+    </div>
+
+    
+    
+</body>
+</html>
